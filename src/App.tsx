@@ -41,6 +41,7 @@ import type { Exercise, Recipe, WeightEntry } from './data'
 import './App.css'
 
 const WeightChart = lazy(() => import('./WeightChart'))
+const SplineDecoration = lazy(() => import('./SplineDecoration'))
 
 type View = 'inicio' | 'comidas' | 'compras' | 'gym' | 'progreso' | 'mas'
 
@@ -331,6 +332,11 @@ function App() {
           <h1>Pequeñas decisiones,<br /><em>progreso real.</em></h1>
         </div>
         <div className="streak"><Activity size={18} /><span>Semana 1<br /><strong>en marcha</strong></span></div>
+      </section>
+
+      <section className="spline-banner" aria-label="Decoración 3D de MI SALUD">
+        <div className="spline-banner__copy"><span className="eyebrow">Enfoque de la semana</span><strong>Constancia antes que intensidad.</strong><p>Comidas planificadas, movimiento diario y descanso suficiente.</p></div>
+        <Suspense fallback={<div className="spline-loading">Cargando escena 3D...</div>}><SplineDecoration /></Suspense>
       </section>
 
       <section className="hero-metrics">

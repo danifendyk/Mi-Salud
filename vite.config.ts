@@ -9,6 +9,20 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        // The Spline scene is online-only, so keep its large renderer out of the initial PWA download.
+        globIgnores: [
+          '**/assets/SplineDecoration-*.js',
+          '**/assets/physics-*.js',
+          '**/assets/opentype-*.js',
+          '**/assets/gaussian-splat-compression-*.js',
+          '**/assets/ui-*.js',
+          '**/assets/navmesh-*.js',
+          '**/assets/boolean-*.js',
+          '**/assets/process-*.js',
+          '**/assets/howler-*.js',
+        ],
+      },
       manifest: {
         name: 'MI SALUD',
         short_name: 'MI SALUD',
