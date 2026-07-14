@@ -31,7 +31,10 @@ export default defineConfig({
         background_color: '#f3f6ef',
         display: 'standalone',
         lang: 'es',
-        icons: [{ src: 'app-icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' }],
+        icons: [
+          { src: 'app-icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+          { src: 'app-icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+        ],
       },
     }),
   ],
